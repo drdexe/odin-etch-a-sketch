@@ -21,7 +21,10 @@ function removeGrid() {
 generateGrid();
 
 button.addEventListener("click", () => {
-  const num = parseInt(prompt("Number of squares per side: (1-100)"));
+  const input = prompt("Number of squares per side: (1-100)");
+  if (input === null) return;  // cancel button
+
+  const num = parseInt(input);
   if (isNaN(num) || num <= 0 || num > 100) {
     alert("Invalid input!");
   } else {
