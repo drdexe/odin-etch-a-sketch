@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: min(75vw, 75vh);
+  height: min(75vw, 75vh);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  width: 6.25%;
+  height: 6.25%;
+  border: 1px solid black;
+}
