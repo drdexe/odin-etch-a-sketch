@@ -13,7 +13,6 @@ body {
 }
 
 .container {
-  border: 1px solid black;
   width: min(75vw, 75vh);
   height: min(75vw, 75vh);
   display: flex;
