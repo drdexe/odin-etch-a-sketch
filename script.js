@@ -11,7 +11,9 @@ function generateGrid(n=16) {
     const div = document.createElement("div");
     div.style.width = div.style.height = `${100 / n}%`;
     div.addEventListener("mouseenter", () => {
-      div.style.backgroundColor = `rgb(${getRandomColor().join(",")})`;
+      if (!div.style.backgroundColor) {
+        div.style.backgroundColor = `rgb(${getRandomColor().join(",")})`;
+      }
     });
     container.appendChild(div);
   }
