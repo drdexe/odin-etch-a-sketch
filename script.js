@@ -1,12 +1,17 @@
 const button = document.querySelector("button");
 const container = document.querySelector(".container");
 
+function getRandomColor() {
+  const randomByte = () => Math.floor(Math.random() * 255) + 1;
+  return [randomByte(), randomByte(), randomByte()];
+}
+
 function generateGrid(n=16) {
   for (let i = 0; i < n ** 2; i++) {
     const div = document.createElement("div");
     div.style.width = div.style.height = `${100 / n}%`;
     div.addEventListener("mouseenter", () => {
-      div.style.backgroundColor = "black";
+      div.style.backgroundColor = `rgb(${getRandomColor().join(",")})`;
     });
     container.appendChild(div);
   }
