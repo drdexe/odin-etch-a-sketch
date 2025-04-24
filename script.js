@@ -13,6 +13,9 @@ function generateGrid(n=16) {
     div.addEventListener("mouseenter", () => {
       if (!div.style.backgroundColor) {
         div.style.backgroundColor = `rgb(${getRandomColor().join(",")})`;
+        div.style.opacity = 0.1;
+      } else {
+        div.style.opacity = +div.style.opacity + 0.1;
       }
     });
     container.appendChild(div);
