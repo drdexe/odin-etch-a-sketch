@@ -18,6 +18,15 @@ function generateGrid(n=16) {
         div.style.opacity = +div.style.opacity + 0.1;
       }
     });
+    div.addEventListener("touchstart", (e) => {
+      e.preventDefault(); // Prevents scrolling while drawing
+      if (!div.style.backgroundColor) {
+        div.style.backgroundColor = `rgb(${getRandomColor().join(",")})`;
+        div.style.opacity = 0.1;
+      } else {
+        div.style.opacity = +div.style.opacity + 0.1;
+      }
+    }, { passive: false });
     container.appendChild(div);
   }
 }
